@@ -21,7 +21,7 @@ contract DEX {
         return address(this).balance;
     }
 
-    function getUnits(uint256 inputTokens, uint256 inputReserves, uint256 outputReserves) internal pure returns (uint256) {
+        function getUnits(uint256 inputTokens, uint256 inputReserves, uint256 outputReserves) internal pure returns (uint256) {
         require(inputReserves > 0 && outputReserves > 0, "not enough funds");
 
         uint256 inputWithFee = inputTokens * 999
@@ -30,31 +30,17 @@ contract DEX {
 
         return numerator / denominator; // (x*y)/(z+x)
     }
-
+    
     function swapTokenToETH(uint256 tokens) public {
-        uint256 price = getUnits(tokens, TokenBalance(), EthBalance());
-        token.transferFrom(msg.sender, address(this), tokens);
-        payable(msg.sender).transfer(price);
+        // TODO implement me
     }
 
     function swapETHToToken() public payable {
-        uint256 price = getUnits(msg.value, EthBalance()-msg.value, TokenBalance());
-        token.transfer(msg.sender, price);
+        // TODO implement me
     }
 
 
     function addLiquidity(uint256 tokens) public payable {
-        uint256 ethBalance = EthBalance() - msg.value;
-        uint256 tokenBalance = TokenBalance();
-
-        if (tokenBalance == 0) {
-            token.transferFrom(msg.sender, address(this), tokens);
-            return;
-        }
-
-        uint256 price = getUnits(msg.value, ethBalance, tokenBalance);
-        require(tokens >= price, "not enough tokens send");
-
-        token.transferFrom(msg.sender, address(this), price);
+        // TODO implement me
     }
 }
