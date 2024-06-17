@@ -1,5 +1,8 @@
 This repo contains a toy-dex implementation.
 
+# Docs
+https://ethresear.ch/t/improving-front-running-resistance-of-x-y-k-market-makers/1281
+
 # Steps
 
 - Copy the files into Remix
