@@ -18,7 +18,7 @@ contract DEX {
     }
 
     function EthBalance() internal view returns (uint256) {
-        return address(this).balance;
+        return address(this).balance - msg.value;
     }
 
     function getUnits(uint256 inputTokens, uint256 inputReserves, uint256 outputReserves) internal pure returns (uint256) {
@@ -30,15 +30,14 @@ contract DEX {
 
         return numerator / denominator; // (x*y)/(z+x)
     }
-    
-    function swapTokenToETH(uint256 tokens) public {
-        // TODO implement me
-    }
 
     function swapETHToToken() public payable {
         // TODO implement me
     }
-
+    
+    function swapTokenToETH(uint256 tokens) public {
+        // TODO implement me
+    }
 
     function addLiquidity(uint256 tokens) public payable {
         // TODO implement me
