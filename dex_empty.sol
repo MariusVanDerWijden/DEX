@@ -10,7 +10,7 @@ contract DEX {
     IERC20 public token;
 
     constructor (address addr) {
-        token = IERC20(addr);
+        // TODO implement me
     }
 
     function TokenBalance() internal view returns (uint256) {
