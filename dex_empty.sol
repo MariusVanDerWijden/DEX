@@ -21,10 +21,10 @@ contract DEX {
         return address(this).balance;
     }
 
-        function getUnits(uint256 inputTokens, uint256 inputReserves, uint256 outputReserves) internal pure returns (uint256) {
+    function getUnits(uint256 inputTokens, uint256 inputReserves, uint256 outputReserves) internal pure returns (uint256) {
         require(inputReserves > 0 && outputReserves > 0, "not enough funds");
 
-        uint256 inputWithFee = inputTokens * 999
+        uint256 inputWithFee = inputTokens * 999;
         uint256 numerator = inputWithFee * outputReserves;
         uint256 denominator = (inputWithFee * 1000) + inputTokens;
 
