@@ -26,7 +26,7 @@ contract DEX {
 
         uint256 inputWithFee = inputTokens * 999;
         uint256 numerator = inputWithFee * outputReserves;
-        uint256 denominator = (inputWithFee * 1000) + inputTokens;
+        uint256 denominator = (inputWithFee * 1000) + inputReserves;
 
         return numerator / denominator; // (x*y)/(z+x)
     }
